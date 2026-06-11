@@ -1,9 +1,9 @@
 # Threat Analysis & Incident Response Report: CryptoBandits.B Infostealer
 
 ## Executive Summary
-This repository documents the end-to-end technical triage, forensic artifact analysis, and Zero-Trust architectural mitigation of **CryptoBandits.B** [CryptoBandits]. This modular information stealer targets local cryptocurrency assets, browser credentials, and session tokens [CryptoBandits]. The malware leverages twin JavaScript (`.js`) loaders for persistence, an engineered Windows Task Scheduler persistence loop, and an embedded Tor network anonymity proxy (`ugate.exe`) for data exfiltration [CryptoBandits]. 
+This repository documents the end-to-end technical triage, forensic artifact analysis, and Zero-Trust architectural mitigation of **CryptoBandits.B**. This modular information stealer targets local cryptocurrency assets, browser credentials, and session tokens. The malware leverages twin JavaScript (`.js`) loaders for persistence, an engineered Windows Task Scheduler persistence loop, and an embedded Tor network anonymity proxy (`ugate.exe`) for data exfiltration. 
 
-As a hobbyist malware researcher, I triaged this infection on a live Windows host. Because the local threat history was automatically rotated and purged by the operating system during the response phase, traditional static file analysis was limited. This report details how I reverse-engineered the malware's remaining disk artifacts and established a comprehensive **Proactive Hardening Strategy** that completely drops the malware’s capabilities into a null execution state.
+As a hobbyist malware researcher, I triaged this infection on a live Windows host (yes my actual computer; no vm, it was literally a random afternoon). Because the local threat history was automatically rotated and purged by the operating system during the response phase, traditional static file analysis was limited. This report details how I reverse-engineered the malware's remaining disk artifacts and established a comprehensive **Proactive Hardening Strategy** that completely drops the malware’s capabilities into a null execution state.
 
 ---
 
