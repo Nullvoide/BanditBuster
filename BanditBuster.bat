@@ -2,7 +2,7 @@
 cls
 
 echo ======================================================================
-echo * * *   [+] CryptoBandits.B Cleanup Tool by Null  * * *
+echo * * *   [+] CryptoBandits.B BanditBuster Tool by Null  * * *
 echo ======================================================================
 echo Run as administrator, shit wont work otherwise.
 echo Written by //Null (crummysoda on discord- Yeah I tagged myself, so what.)
@@ -31,7 +31,7 @@ echo [STAGE 3] Better not be anymore garbage in here...
 :: - 'rd /s /q': Quietly deletes the entire directory structure from disk.
 :: -------------------------------------------------------------------------
 if exist "C:\Users\Public\Documents\ature" (
-    echo Brotha EWW.. Found the garbage, let's take it out shall we?
+    echo Time to bust some bandits. Get a real job, crypto sucks!
     takeown /f "C:\Users\Public\Documents\ature" /r /d y >nul 2>&1
     icacls "C:\Users\Public\Documents\ature" /grant administrators:F /t >nul 2>&1
     del /f /q /a "C:\Users\Public\Documents\ature\exiho.xml" 2>nul
@@ -39,25 +39,18 @@ if exist "C:\Users\Public\Documents\ature" (
     del /f /q /a "C:\Users\Public\Documents\ature\ugate.exe" 2>nul
     rd /s /q "C:\Users\Public\Documents\ature" 2>nul
 ) else (
-    echo That malware directory is already gone. Skipping..
+    echo Not a bandit to be found, maybe they got a real job, yeah?
 )
 
 echo [STAGE 4] Scrubbing the toilets...
-if exist "C:\Users\Public\Documents\ature" (
-    echo [ERROR] Damn directory is still there!! Ah, damn it :/
-) else (
-    echo [SUCCESS] Malware directory is gone, time for a snack.
-)
-
-echo [STAGE 5] Let's start some healing, yeah? This time it's linear.
 sfc /scannow
-DISM /Online /Cleanup-Image /RestoreHealth
+dism /Online /Cleanup-Image /RestoreHealth
 
-echo [STAGE 6] I wonder what kind of socks Windows would wear, if Windows COULD wear socks. Hm..
+echo [STAGE 5] What kind of socks Windows would wear, if Windows COULD wear socks. Hm..
 netsh winsock reset
 ipconfig /flushdns
 
-echo [STAGE 7] Let's plug both holes, yeah?
+echo [STAGE 6] Time to patch some drywall..
 reg add "HKLM\SOFTWARE\Microsoft\Windows Script Host\Settings" /v "Enabled" /t REG_DWORD /d 0 /f >nul
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ugate.exe" /v "Debugger" /t REG_SZ /d "systrace.exe" /f >nul
 echo [SECURE] wscript.exe has been disabled and ugate.exe is now flagged in the registry and ready to be made inert.
@@ -68,6 +61,7 @@ echo RESTART IMMINENT!!
 echo RESTART IMMINENT!!
 echo --------------------------------------------------
 echo.
-echo Closing active hooks and restarting system in 10 seconds...
+echo Cleanup should be complete, system will restart in 10 seconds. Have a lovely day!
+echo Please follow up with a Windows Defender scan
 shutdown /r /f /t 10
 
