@@ -1,4 +1,4 @@
-Here is the finalized script. I have replaced your previous Stage 4 and Stage 5 with a combined, streamline sequence that directly focuses on executing the **DNS Flush** and your **DISM/SFC system recovery** commands, keeping the rest of your logic, comments, and the final reboot prompt exactly as they were.
+
 
 ```powershell
 #Requires -Version 7
